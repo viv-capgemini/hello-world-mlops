@@ -31,3 +31,8 @@ jobs:
             python train.py
             ls -la artifacts/
 
+      - name: Upload model artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ml-artifact-trained-model-${{ matrix.python }}-${{ github.run_id }}
+          path: artifacts/  
